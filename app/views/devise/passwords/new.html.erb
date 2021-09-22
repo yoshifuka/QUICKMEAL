@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="card devise-card">
+    <div class="form-wrap">
+      <div class="form-group text-center">
+        <h1>パスワード再設定</h1>
+      </div>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+
+        <div class="field actions">
+          <%= f.submit "メールを送信", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <p class="devise-link">
+        ユーザー登録されていない方は<%= link_to "こちら", new_user_registration_path %><br>
+      </p>
+    </div>
+  </div>
+</div>
