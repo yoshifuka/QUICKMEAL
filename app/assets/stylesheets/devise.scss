@@ -1,0 +1,45 @@
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 90%;
+  padding: 100px 75px 100px;
+  display: block;
+  flex: 1;
+  flex-basis: auto;
+  box-sizing: border-box;
+}
+
+.devise-card {
+  border: none;
+}
+
+.form-wrap{
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+.field {
+  padding: 10px 10px;
+}
+
+.form-control {
+  border: 1px solid #dcdfe6;
+  font-size: inherit;
+}
+
+.devise-link {
+  text-align: center;
+  margin: 16px 0;
+}
+
+footer {
+  margin-top: auto;
+}
+
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb ;
+  width: 100%;
+  margin-bottom: 15px;
+}

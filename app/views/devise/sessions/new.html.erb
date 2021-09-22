@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="card devise-card">
+    <div class="form-wrap">
+      <div class="form-group text-center">
+        <h1>ログイン</h1>
+      </div>
+      <%= form_with scope: resource, as: resource_name, url: session_path(resource_name), local: true do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true , class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="field actions">
+          <%= f.submit "ログインする", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <p class="devise-link">
+        ユーザー登録されていない方は<%= link_to "こちら", new_user_registration_path %><br>
+        パスワードをお忘れの方は<%= link_to 'こちら', new_user_password_path %>
+      </p>
+    </div>
+  </div>
+</div>
