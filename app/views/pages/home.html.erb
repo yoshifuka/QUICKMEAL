@@ -1,0 +1,16 @@
+<div class="main">
+  <% if user_signed_in? %>
+    <div class="container text-center">
+          <h3>みんなの料理 (<%= @feed_items.count %>品) </h3>
+          <%= render 'partial/feed' %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <center>
+      <h1>料理は早くて簡単に！</h1>
+      <h2>今日のレシピ、あっという間に！</h2>
+      <%= link_to 'クックログを始める', new_user_registration_path, class: "btn btn-primary btn-lg btn-demo" %>
+    </center>
+  <% end %>
+</div>

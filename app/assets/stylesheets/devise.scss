@@ -2,7 +2,7 @@
   max-width: 960px;
   margin: 0 auto;
   width: 90%;
-  padding: 100px 75px 100px;
+  padding: 75px 75px 100px;
   display: block;
   flex: 1;
   flex-basis: auto;
@@ -14,13 +14,13 @@
 }
 
 .form-wrap{
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   margin: 50px auto;
 }
 
 .field {
-  padding: 10px 10px;
+  padding: 10px 1px;
 }
 
 .form-control {
@@ -42,4 +42,23 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb ;
   width: 100%;
   margin-bottom: 15px;
+}
+
+#error_explanation  {
+  color: red;
+  ul {
+    color: red;
+    margin: 30px 0 30px 0;
+  }
+}
+// ヘッダー
+.navbar {
+  background-color: #fff;
+  border-bottom: 2px solid rgba(0, 0, 0, .0975);
+  height: 70px;
+  &-nav {
+    & > li {
+      margin-left: 25px;
+    }
+  }
 }
