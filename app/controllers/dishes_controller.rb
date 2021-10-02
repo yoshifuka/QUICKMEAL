@@ -1,6 +1,7 @@
 class DishesController < ApplicationController
+  before_action :set_dish, only: %i(show edit update destroy)
+
   def show
-    @dish = Dish.find(params[:id])
   end
 
   def new
@@ -19,11 +20,9 @@ class DishesController < ApplicationController
   end
 
   def edit
-    @dish = Dish.find(params[:id])
   end
 
   def update
-    @dish = Dish.find(params[:id])
     if @dish.update_attributes(dish_params)
       flash[:success] = "料理情報が更新されました！"
       redirect_to dish_path(@dish)
@@ -33,7 +32,6 @@ class DishesController < ApplicationController
   end
 
   def destroy
-    @dish = Dish.find(params[:id])
     if user_signed_in?
       @dish.destroy
       flash[:success] = "料理が削除されました"
@@ -47,5 +45,9 @@ class DishesController < ApplicationController
   private
     def dish_params
       params.require(:dish).permit(:name, :description, :portion, :tips, :required_time, ingredients_attributes: [:id, :name, :quantity]).merge(user_id: current_user.id)
+    end
+
+    def set_dish
+      @dish = Dish.find(params[:id])
     end
 end
