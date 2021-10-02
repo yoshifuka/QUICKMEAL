@@ -27,15 +27,7 @@
       </div>
     </div>
   <% end %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
-  <%= render partial: "ingredient_form", locals: {f: f} %>
+  <%= render partial: "ingredient_form", collection: (1..9) ,locals: {f: f} %>
   <div class = 'field'>
     <%= f.label :tips %>　<span class="input-unneed">※任意</span>
     <%= f.text_field :tips, size: "30x4", class: 'form-control', id: 'dish_tips' %>

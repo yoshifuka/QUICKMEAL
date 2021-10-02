@@ -38,15 +38,7 @@
         <% end %>
 
         <div class="field">
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
-          <%= render partial: "ingredient_form", locals: {f: f} %>
+          <%= render partial: "ingredient_form", collection: (1..9) ,locals: {f: f} %>
         </div>
 
         <div class = 'field'>
