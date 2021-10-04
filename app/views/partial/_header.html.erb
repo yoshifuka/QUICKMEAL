@@ -1,10 +1,25 @@
-<header class="navbar navbar-fixed-top">
- <div class="container">
-   <%= link_to(image_tag("header_logo.jpg", :alt => "", :width => '138', :height => '37'), id: 'logo') %>
-   <nav>
-     <ul class="nav navbar-nav navbar-right">
-       <li><%= link_to '新規登録', new_user_registration_path %></li>
-     </ul>
-   </nav>
- </div>
+<header class="navbar navbar-expand-lg navbar-light sticky-top">
+  <div class="container">
+    <%= link_to(image_tag("header_logo.jpg", :alt => "", :width => '138', :height => '37'), root_path, class: "navbar__brand navbar__mainLogo") %>
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li><%= link_to '料理投稿', new_dish_path, class: "btn btn-primary btn-record" %></li>
+          <li><%= link_to 'お気に入りレシピ一覧', "#" %></li>
+          <li class="dropdown">
+            <a class="dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown">
+              アカウント <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'プロフィール', current_user %></li>
+              <li><%= link_to 'レシピ一覧', root_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to '新規登録', new_user_registration_path %></li>
+          <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <li><%= link_to 'レシピ一覧', root_path %></li>
+        <% end %>
+      </ul>
+  </div>
 </header>

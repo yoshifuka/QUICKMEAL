@@ -1,0 +1,134 @@
+// Place all the styles related to the dishes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+//// 料理登録ページ ////
+.input-need {
+  color: red;
+  font-size: 13px;
+}
+
+.input-unneed {
+  color: blue;
+  font-size: 13px;
+}
+
+// 料理個別ページ
+.dish-user-name {
+  display: inline-block;
+}
+
+h2.dish-name {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.dish-portion {
+  margin-top: 30px;
+}
+
+.tips {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  h5 {
+    font-size: 17px;
+  }
+}
+
+.title-tips {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10;
+}
+
+.show-dish-other-info {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.dish-other-info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dish-info {
+  h5 {
+    font-size: 16px;
+    display: inline-block;
+  }
+  h4 {
+    font-size: 24px;
+    display: inline-block;
+  }
+}
+
+.change-dish {
+  display: inline-block;
+}
+
+// 料理(Dish)
+.dishes {
+  list-style: none;
+  padding: 10px;
+  li {
+    padding: 20px 0;
+    border-top: 2px solid #e8e8e8 ;
+  }
+  .description {
+    margin-left: 60px;
+  }
+  .timestamp {
+    margin-left: 60px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.ingredients {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  h5 {
+    font-size: 20px;
+  }
+}
+
+.title-ingredients {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table.ingredient {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table.ingredient th, table.ingredient td {
+  padding: 10px 0;
+  text-align: center;
+}
+
+table.ingredient tr:nth-child(odd) {
+  background-color: #eee
+}
+
+.dish-ingredient {
+  margin: 15px 0;
+}
+
+.title-ingredient-mini {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.dish-name {
+  margin-bottom: 20px;
+}
