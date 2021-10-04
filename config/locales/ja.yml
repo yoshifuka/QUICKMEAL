@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      dish: 料理
+      ingredient: 材料
+    attributes:
+      dish:
+        id: ID
+        name: 料理名
+        description: 説明
+        portion: 分量
+        tips: コツ・ポイント
+        required_time: 所要時間
+        user_id: 作成者のID
+      ingredient:
+        dish_id: 紐づいた料理のID
+        name: 材料 [10種類まで登録可]
+        quantity: 量
+  will_paginate:
+    previous_label: 前_
+    next_label: _次
+    page_gap: …
