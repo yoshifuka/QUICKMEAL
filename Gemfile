@@ -30,6 +30,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+group :production do
+ gem 'fog-aws'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -48,3 +52,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rails-i18n'
+gem 'carrierwave'
+gem 'mini_magick'

@@ -132,3 +132,9 @@ table.ingredient tr:nth-child(odd) {
 .dish-name {
   margin-bottom: 20px;
 }
+
+.dish-picture img {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}

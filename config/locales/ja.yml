@@ -12,6 +12,7 @@ ja:
         tips: コツ・ポイント
         required_time: 所要時間
         user_id: 作成者のID
+        picture: 料理の写真
       ingredient:
         dish_id: 紐づいた料理のID
         name: 材料 [10種類まで登録可]

@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="user-picture-box">
+          <%= link_to((image_tag @user.profile_photo.url, width: 150), user_path(@user.id)) if @user.profile_photo.url.present? %>
         </div>
       </div>
       <div class="col-md-6">
