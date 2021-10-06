@@ -2,13 +2,16 @@
   <div class="devise-card">
     <div class="form-wrap">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render "devise/shared/error_messages", resource: @user %>
+        <span class="picture">
+          <%= f.label :profile_photo %>
+          <%= f.file_field :profile_photo, accept: 'image/jpeg,image/png', class: 'form-control' %>
+          <%= image_tag(@user.profile_photo.url, width: 200, height: 200) if @user.profile_photo.url.present? %>
+        </span>
 
-        <div class= 'field'>
-          <h4><%= @user.username %></h4>
-          <p>プロフィール写真を変更</p>
+        <div class = 'field'>
+          <h3><%= @user.username %></h3>
         </div>
-
         <div class = 'field'>
           <%= f.label :username %>
           <%= f.text_field :username, class: 'form-control', id: 'user_name' %>

@@ -1,4 +1,10 @@
 <%= form_with model: @dish, local: true do |f| %>
+  <%= render 'devise/shared/error_messages', resource: @dish %>
+  <span class="picture">
+    <%= f.label :picture %>　<span class="input-unneed">※任意</span>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/png', class: 'form-control', id: 'dish_picture' %>
+  </span>
+  
   <div class = 'field'>
     <%= f.label :name %>　<span class="input-need">※必須</span>
     <%= f.text_field :name, class: 'form-control', id: 'dish_name' %>
@@ -27,7 +33,11 @@
       </div>
     </div>
   <% end %>
-  <%= render partial: "ingredient_form", collection: (1..9) ,locals: {f: f} %>
+
+  <div class="field">
+    <%= render partial: "ingredient_form", collection: (1..9) ,locals: {f: f} %>
+  </div>
+
   <div class = 'field'>
     <%= f.label :tips %>　<span class="input-unneed">※任意</span>
     <%= f.text_field :tips, size: "30x4", class: 'form-control', id: 'dish_tips' %>
@@ -40,3 +50,12 @@
     <%= f.submit nil, class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('#dish_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('アップロードできる写真の最大サイズは5MBです。5MB以下の画像を選択してください');
+    }
+  });
+</script>

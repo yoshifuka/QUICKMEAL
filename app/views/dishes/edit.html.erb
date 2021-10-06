@@ -6,7 +6,11 @@
       </div>
 
       <%= form_for(@dish) do |f| %>
-
+         <span class="picture">
+          <%= f.label :picture %>　<span class="input-unneed">※任意</span>
+          <%= f.file_field :picture, accept: 'image/jpeg,image/png', class: 'form-control', id: 'dish-picture' %>
+          <%= image_tag(@dish.picture.url, width: 200, height: 200) if @dish.picture.url.present? %>
+        </span>
         <div class = 'field'>
           <%= f.label :name %>　<span class="input-need">※必須</span>
           <%= f.text_field :name, class: 'form-control', id: 'dish_name' %>
@@ -52,7 +56,7 @@
           <%= f.label :required_time %> [分]　<span class="input-unneed">※任意</span>
           <%= f.text_field :required_time, class: 'form-control', id: 'dish_required_time' %>
         </div>
-        
+
         <%= f.submit "更新する", class: "btn btn-primary" %>
         <p></p>
         <%= link_to "料理を削除する", dish_path(@dish), method: :delete, data: { confirm: "本当にこの料理を削除してよろしいですか？" } %>

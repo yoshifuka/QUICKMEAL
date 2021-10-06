@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_170531) do
+ActiveRecord::Schema.define(version: 2021_10_05_141626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_09_29_170531) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "picture"
     t.index ["user_id", "created_at"], name: "index_dishes_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_dishes_on_user_id"
   end
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_09_29_170531) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "introduction"
+    t.string "profile_photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
