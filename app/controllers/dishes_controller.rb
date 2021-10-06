@@ -44,7 +44,7 @@ class DishesController < ApplicationController
 
   private
     def dish_params
-      params.require(:dish).permit(:name, :description, :portion, :tips, :required_time, ingredients_attributes: [:id, :name, :quantity]).merge(user_id: current_user.id)
+      params.require(:dish).permit(:name, :description, :portion, :tips, :picture, :required_time, ingredients_attributes: [:id, :name, :quantity]).merge(user_id: current_user.id)
     end
 
     def set_dish
