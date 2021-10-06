@@ -17,11 +17,11 @@
     <div class="ingredients">
       <h5 class="title-ingredients">材料</h5>
       <table class="ingredient">
-        <% @dish.ingredients.each do |i| %>
-          <% if i.name.present? %>
+        <% @dish.ingredients.each do |ingredient| %>
+          <% if ingredient.name.present? %>
             <tr>
-              <td><%= i.name %></td>
-              <td><%= i.quantity %></td>
+              <td><%= ingredient.name %></td>
+              <td><%= ingredient.quantity %></td>
             </tr>
           <% end %>
         <% end %>
