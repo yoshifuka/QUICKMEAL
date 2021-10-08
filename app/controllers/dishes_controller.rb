@@ -2,6 +2,7 @@ class DishesController < ApplicationController
   before_action :set_dish, only: %i(show edit update destroy)
 
   def show
+    @comment = Comment.new
   end
 
   def new

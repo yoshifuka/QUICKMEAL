@@ -1,3 +1,4 @@
+<% @comments  = @dish.feed_comment(@dish.id) %>
 <div class="main">
   <div class="text-center">
     <div>
@@ -37,6 +38,9 @@
       <div class="dish-info">
         <h5>調理時間：</h5><h4><%= @dish.required_time %></h4> <h5>分</h5>
       </div>
+    <div class="comment">
+      <%= render "comments/feed_comments" %>
+      <%= render "comments/new" %>
     </div>
   </div>
 </div>
