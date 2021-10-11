@@ -16,7 +16,8 @@
         <% end %>
       </div>
     </div>
-    <div class="container text-center">
+    <div class="form-wrap">
+      <div class="field text-center">
         <% if @user.dishes.any? %>
           <h3 class="dish-name">料理 (<%= @user.dishes.count %>品)</h3>
           <ol class="dishes">
@@ -24,6 +25,7 @@
           </ol>
           <%= will_paginate @dishes %>
         <% end %>
+      </div>
     </div>
   </div>
 </div>

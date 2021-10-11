@@ -1,0 +1,3 @@
+<%= link_to create_favorites_path(@dish), method: :post, class: 'like', remote: true do %>
+  <div class="like-btn-like"><i class="fa fa-thumbs-o-up"></i> お気に入り <%= @dish.favorites.count %></div>
+<% end %>
