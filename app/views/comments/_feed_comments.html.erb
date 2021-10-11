@@ -1,0 +1,8 @@
+<div>
+    <h3 class="title-comment"><%= "#{@dish.comments.count}" %> 件のコメント</h3>
+</div>
+<% if @comments.any? %>
+  <ul class="comments">
+    <%= render @comments %>
+  </ul>
+<% end %>

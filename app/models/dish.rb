@@ -8,6 +8,11 @@ class Dish < ApplicationRecord
   has_many :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients
   validate  :picture_size
+  has_many :comments, dependent: :destroy
+
+  def feed_comment(dish_id)
+    Comment.where("dish_id = ?", dish_id)
+  end
 
   private
 
