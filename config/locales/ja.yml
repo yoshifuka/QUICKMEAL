@@ -3,6 +3,7 @@ ja:
     models:
       dish: 料理
       ingredient: 材料
+      comment: コメント
     attributes:
       dish:
         id: ID
@@ -17,6 +18,10 @@ ja:
         dish_id: 紐づいた料理のID
         name: 材料 [10種類まで登録可]
         quantity: 量
+      comment:
+        user_id: コメント投稿者のID
+        dish_id: コメントされた料理のID
+        content: コメント
   will_paginate:
     previous_label: 前_
     next_label: _次

@@ -1,0 +1,16 @@
+<%= form_with model: @comment, local: true do |f| %>
+  <%= render 'devise/shared/error_messages', resource: @comment %>
+  <%= hidden_field_tag :dish_id, @dish.id %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="field">
+        <%= f.text_area :content, placeholder: "コメントを追加..." %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field">
+        <%= f.submit "コメント", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -68,6 +68,32 @@ h2.dish-name {
   display: inline-block;
 }
 
+.title-comment {
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.comments {
+  list-style: none;
+  li {
+    font-size: 14px;
+    padding: 20px 0;
+    border-top: 1px solid #e8e8e8 ;
+    .comment {
+      font-size: 16px;
+    }
+  }
+}
+
+.comment-create-at {
+  color: grey;
+}
+
+.comment_form {
+  padding-left: 40px;
+}
+
 // 料理(Dish)
 .dishes {
   list-style: none;
