@@ -4,7 +4,7 @@
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
           <li><%= link_to '料理投稿', new_dish_path, class: "btn btn-primary btn-record" %></li>
-          <li><%= link_to 'お気に入りレシピ一覧', "#" %></li>
+          <li><%= link_to 'お気に入りレシピ一覧', favorites_path %></li>
           <li class="dropdown">
             <a class="dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown">
               アカウント <b class="caret"></b>
