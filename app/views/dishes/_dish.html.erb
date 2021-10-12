@@ -1,3 +1,4 @@
+<% @dish = dish %>
 <li id="dish-<%= dish.id %>">
   <div>
     <span>
@@ -5,6 +6,7 @@
     </span>
   </div>
   <span class="name"><%= link_to dish.name, dish_path(dish) %></span>
+  <%= render 'users/favorite_form' %>
   <span class="description"><%= dish.description %></span><br>
   <div class="dish-ingredient">
     <p class="title-ingredient-mini">【材料】</p>

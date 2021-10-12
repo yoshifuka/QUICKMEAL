@@ -1,0 +1,27 @@
+// Place all the styles related to the Favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// お気に入り
+h3 {
+  padding: 10px 0;
+}
+
+.like-btn-unlike {
+  padding-top: 10px;
+  color: red;
+}
+.like-btn-like {
+  padding-top: 10px;
+  color: grey;
+}
+a.like, a.unlike {
+  text-decoration: none;
+}
+
+.favorites {
+  list-style: none;
+  li {
+    padding: 20px 0;
+    border-top: 2px solid #e8e8e8 ;
+  }
+}

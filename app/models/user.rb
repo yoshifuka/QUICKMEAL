@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :dishes, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -27,5 +28,17 @@ class User < ApplicationRecord
 
   def feed
     Dish.where("user_id = ?", id)
+  end
+
+  def favorite(dish)
+    Favorite.create!(user_id: id, dish_id: dish.id)
+  end
+
+  def unfavorite(dish)
+    Favorite.find_by(user_id: id, dish_id: dish.id).destroy
+  end
+
+  def favorite?(dish)
+    !Favorite.find_by(user_id: id, dish_id: dish.id).nil?
   end
 end
