@@ -1,16 +1,15 @@
 <% @dish = Dish.find(favorite.dish_id) %>
-<% user = @dish.user %>
 <li id="favorite-<%= favorite.id %>">
   <div class="row favorite-dish">
     <div class="col-md-6">
       <span class="picture">
-          <%= link_to((image_tag @dish.picture.url, width: 200), dish_path(@dish.id), class: 'dish-picture') if @dish.picture.url.present? %>
-        </span>
+        <%= link_to((image_tag @dish.picture.url), dish_path(@dish.id), class: 'dish-picture') if @dish.picture.url.present? %>
+      </span>
     </div>
     <div class="col-md-6">
       <p><%= link_to @dish.name, dish_path(@dish) %></p>
       <p><%= @dish.description %></p>
-      <p class="cook-user">cooked by <%= link_to user.username, user_path(user) %></p>
+      <p class="cook-user">cooked by <%= link_to @dish.user.username, user_path(@dish.user) %></p>
     </div>
   </div>
 </li>
