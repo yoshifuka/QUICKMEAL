@@ -1,0 +1,3 @@
+<li>
+  <%= link_to((image_tag user.profile_photo.url, width: 100), user_path(user.id), class: 'user-picture') if user.profile_photo.url.present? %><%= link_to user.username, user_path(user) %>
+</li>
