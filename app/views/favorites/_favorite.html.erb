@@ -3,7 +3,7 @@
   <div class="row favorite-dish">
     <div class="col-md-6">
       <span class="picture">
-        <%= link_to((image_tag @dish.picture.url), dish_path(@dish.id), class: 'dish-picture') if @dish.picture.url.present? %>
+        <%= link_to((image_tag @dish.picture.url, width: 200, height: 100), dish_path(@dish.id), class: 'dish-picture') if @dish.picture.url.present? %>
       </span>
     </div>
     <div class="col-md-6">

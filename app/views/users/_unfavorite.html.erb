@@ -1,4 +1,4 @@
 <%= link_to destroy_favorites_path(@dish), method: :delete, class: 'unlike', remote: true do %>
-  <div class="like-btn-unlike"><i class="fa fa-thumbs-o-up"></i> お気に入りを外す <%= @dish.favorites.count %></div>
+  <div class="like-btn-unlike"><i class="fa fa-thumbs-o-up"></i> お気に入り <%= @dish.favorites.count %></div>
 <% end %>
 　　
