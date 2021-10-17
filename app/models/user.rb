@@ -3,9 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :dishes, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :followers, through: :passive_relationships, source: :follower
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   validates :username, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -27,7 +30,7 @@ class User < ApplicationRecord
   end
 
   def feed
-    Dish.where("user_id = ?", id)
+    Dish.all
   end
 
   def favorite(dish)
@@ -40,5 +43,21 @@ class User < ApplicationRecord
 
   def favorite?(dish)
     !Favorite.find_by(user_id: id, dish_id: dish.id).nil?
+  end
+
+  def follow(other_user)
+    following << other_user
+  end
+
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
+  def followed_by?(other_user)
+    followers.include?(other_user)
   end
 end
