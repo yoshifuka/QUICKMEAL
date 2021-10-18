@@ -1,10 +1,20 @@
 class ApplicationController < ActionController::Base
+  before_action :set_search
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   def after_sign_in_path_for(resource)
     user_path(resource)
   end
+
+  def set_search
+    if user_signed_in?
+      @search_word = params[:q][:name_or_ingredients_name_cont] if params[:q]
+      @q = current_user.feed.paginate(page: params[:page], per_page: 5).ransack(params[:q])
+      @dishes = @q.result(distinct: true)
+    end
+  end
+
 
   protected
 

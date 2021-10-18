@@ -1,5 +1,7 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: %i(show edit update destroy)
+  def index
+  end
 
   def show
     @comment = Comment.new

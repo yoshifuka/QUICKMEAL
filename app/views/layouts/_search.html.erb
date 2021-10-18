@@ -1,0 +1,7 @@
+<%= search_form_for @q do |f| %>
+  <ul class="navbar-nav search">
+    <li><%= f.search_field :name_or_ingredients_name_cont, placeholder: "キーワードで検索", class: 'form-control' %></li>
+    <li><%= f.number_field :required_time_gteq, class:"form-control", placeholder: "以上" %></li>~<li><%= f.number_field :required_time_lteq, class:"form-control", placeholder: "以下" %></li>
+    <li><%= f.submit nil, class: 'btn btn-warning btn-record' %></li>
+  </ul>
+<% end %>

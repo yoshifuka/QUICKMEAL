@@ -33,11 +33,6 @@
   margin: 16px 0;
 }
 
-footer {
-  margin-top: auto;
-}
-
-
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb ;
   width: 100%;
@@ -58,7 +53,15 @@ input, textarea, select, .uneditable-input {
   height: 70px;
   &-nav {
     & > li {
-      margin-left: 25px;
+      margin-left: 20px;
     }
   }
+}
+
+footer {
+  background-color: #fff;
+}
+
+.search > li {
+  margin: 0 5px;
 }
