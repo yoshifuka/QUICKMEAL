@@ -1,0 +1,11 @@
+<div class="main">
+  <div class="form-wrap">
+    <% if @search_word.present? %>
+      <h3 class="text-center">”<%= @search_word %>”の検索結果：<%= @dishes.count %>件</h3>
+    <% end %>
+    <ul class="dishes text-center">
+      <%= render @dishes %>
+    </ul>
+    <%= will_paginate @dishes %>
+  </div>
+</div>

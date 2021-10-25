@@ -157,7 +157,11 @@ table.ingredient tr:nth-child(odd) {
 }
 
 .dish-picture img {
-  max-width: 100%;
-  height: auto;
-  box-sizing: border-box;
+  max-width: 150px;
+  height: 150px;
+}
+
+.dish-picture-show img {
+  max-width: 200px;
+  height: 200px;
 }

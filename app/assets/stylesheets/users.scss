@@ -3,8 +3,14 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 // プロフィールページ ////
 .user-picture img {
-  max-width: 100%;
-  height: auto;
+  width: 100px;
+  height: 100px;
+}
+
+.user-picture-show img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .user-picture-box {
