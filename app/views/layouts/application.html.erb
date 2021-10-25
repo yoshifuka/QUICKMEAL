@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QUICKMEAL</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,6 +19,7 @@
       <% end %>
       <%= yield %>
     </div>
+    <div id="pageTop"><a href="#" ><i class="fa fa-chevron-up"></i></a>
     <%= render 'partial/footer' %>
   </body>
 </html>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: %i(show following followers)
 
   def show
@@ -18,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find_by(id: params[:id])
-  end
+
+    def set_user
+      @user = User.find_by(id: params[:id])
+    end
 end

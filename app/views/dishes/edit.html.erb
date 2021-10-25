@@ -1,3 +1,4 @@
+<% provide(:title, "料理情報の編集") %>
 <div class="main">
   <div class="card">
     <div class="form-wrap">
@@ -5,7 +6,7 @@
         <h1>料理登録</h1>
       </div>
 
-      <%= form_for(@dish) do |f| %>
+      <%= form_with model: @dish do |f| %>
          <span class="picture">
           <%= f.label :picture %>　<span class="input-unneed">※任意</span>
           <%= f.file_field :picture, accept: 'image/jpeg,image/png', class: 'form-control', id: 'dish-picture' %>
@@ -25,7 +26,7 @@
         </div>
         <div class="row">
           <div class="col-md-9">
-            <p class="title-ingredient-name">材料 [10種類まで登録可]　<span class="input-unneed">※任意</span></p>
+            <p class="title-ingredient-name">材料 [10種類まで登録可]　<span class="input-need">※必須</span></p>
           </div>
           <div class="col-md-3">
             <p class="title-ingredient-quantity">量　<span class="input-unneed">※任意</span></p>
@@ -53,13 +54,13 @@
         </div>
 
         <div class = 'field'>
-          <%= f.label :required_time %> [分]　<span class="input-unneed">※任意</span>
+          <%= f.label :required_time %> [分]　<span class="input-need">※必須</span>
           <%= f.text_field :required_time, class: 'form-control', id: 'dish_required_time' %>
         </div>
 
         <%= f.submit "更新する", class: "btn btn-primary" %>
         <p></p>
-        <%= link_to "料理を削除する", dish_path(@dish), method: :delete, data: { confirm: "本当にこの料理を削除してよろしいですか？" } %>
+        <%= link_to "料理を削除する", dish_path(@dish), method: :delete, class:"link", data: { confirm: "本当にこの料理を削除してよろしいですか？" } %>
       <% end %>
     </div>
   </div>

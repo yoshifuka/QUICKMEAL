@@ -2,10 +2,10 @@
 <li id="dish-<%= dish.id %>">
   <div>
     <span>
-      <%= link_to((image_tag dish.picture.url, width: 200, height: 200), dish_path(dish.id), class: 'dish-picture') if dish.picture.url.present? %>
+      <%= link_to((image_tag dish.picture.url), dish_path(dish.id), class: 'dish-picture') if dish.picture.url.present? %>
     </span>
   </div>
-  <span class="name"><%= link_to dish.name, dish_path(dish) %></span>
+  <span class="name"><%= link_to dish.name, dish_path(dish), class:"link" %></span>
   <%= render 'users/favorite_form' %>
   <span class="description"><%= dish.description %></span><br>
   <div class="dish-ingredient">
@@ -22,7 +22,7 @@
       <%= time_ago_in_words(dish.created_at) %>前に投稿
     </span>
     <% if current_user == dish.user %>
-      <%= link_to "削除", dish_path(dish), method: :delete,
+      <%= link_to "削除", dish_path(dish), method: :delete, class:"link",
                         data: { confirm: "本当に削除しますか？" } %>
     <% end %>
   </div>

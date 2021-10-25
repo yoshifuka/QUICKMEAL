@@ -7,9 +7,9 @@
       </span>
     </div>
     <div class="col-md-6">
-      <p><%= link_to @dish.name, dish_path(@dish) %></p>
+      <p><%= link_to @dish.name, dish_path(@dish), class:"link" %></p>
       <p><%= @dish.description %></p>
-      <p class="cook-user">cooked by <%= link_to @dish.user.username, user_path(@dish.user) %></p>
+      <p class="cook-user">cooked by <%= link_to @dish.user.username, user_path(@dish.user), class:"link" %></p>
     </div>
   </div>
 </li>
