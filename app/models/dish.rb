@@ -6,10 +6,11 @@ class Dish < ApplicationRecord
   validates :description, length: { maximum: 140 }
   validates :tips, length: { maximum: 50 }
   has_many :ingredients, dependent: :destroy
+  validates :required_time, presence: true
   accepts_nested_attributes_for :ingredients
-  validate  :picture_size
+  validate :picture_size
   has_many :comments, dependent: :destroy
-  has_many :favorites, dependent: :destroy 
+  has_many :favorites, dependent: :destroy
 
   def feed_comment(dish_id)
     Comment.where("dish_id = ?", dish_id)

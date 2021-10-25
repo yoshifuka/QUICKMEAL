@@ -1,9 +1,10 @@
+<% provide(:title, "プロフィール") %>
 <div class="main">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <div class="user-picture-box">
-          <%= link_to((image_tag @user.profile_photo.url, width: 150), user_path(@user.id)) if @user.profile_photo.url.present? %>
+          <%= link_to((image_tag @user.profile_photo.url), user_path(@user.id), class: 'user-picture-show') if @user.profile_photo.url.present? %>
         </div>
       </div>
       <div class="col-md-6">
@@ -15,7 +16,7 @@
           <%= render 'partial/stats' %>
         </section>
         <% if current_user == @user %>
-          <div class="account-edit"><%= link_to "プロフィール編集", edit_user_registration_path(@user) %></div>
+          <div class="account-edit"><%= link_to "プロフィール編集", edit_user_registration_path(@user), class:"link" %></div>
         <% end %>
         <%= render 'follow_form' if user_signed_in? %>
       </div>

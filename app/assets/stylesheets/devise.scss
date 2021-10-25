@@ -26,6 +26,7 @@
 .form-control {
   border: 1px solid #dcdfe6;
   font-size: inherit;
+  margin-bottom: 5px;
 }
 
 .devise-link {
@@ -51,17 +52,57 @@ input, textarea, select, .uneditable-input {
   background-color: #fff;
   border-bottom: 2px solid rgba(0, 0, 0, .0975);
   height: 70px;
-  &-nav {
-    & > li {
-      margin-left: 20px;
-    }
+  .nav li{
+    margin-left: 20px;
   }
+}
+#logo  {
+  img {
+    max-width: 140px;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+.dropdown li{
+  margin-bottom: 10px;
 }
 
 footer {
   background-color: #fff;
 }
 
+.search {
+  margin-top: 5px;
+}
 .search > li {
   margin: 0 5px;
+}
+
+.link {
+  text-decoration: none!important;
+}
+
+#pageTop {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+}
+
+#pageTop i {
+  padding-top: 6px
+}
+
+#pageTop a {
+  display: block;
+  z-index: 999;
+  padding: 15px 10px;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #9FD6D2;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 }
