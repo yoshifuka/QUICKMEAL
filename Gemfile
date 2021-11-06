@@ -6,7 +6,7 @@ ruby '2.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -30,6 +30,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'will_paginate', '3.1.7'
 gem 'will_paginate-bootstrap4'
 gem 'ransack'
+
+group :production, :staging do
+ gem 'unicorn'
+end
 
 group :production do
  gem 'fog-aws'

@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_10_13_005542) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "dish_id"
     t.integer "user_id"
     t.text "content"
@@ -25,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_005542) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "dishes", force: :cascade do |t|
+  create_table "dishes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "portion"
@@ -39,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_005542) do
     t.index ["user_id"], name: "index_dishes_on_user_id"
   end
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "user_id"
     t.integer "dish_id"
     t.datetime "created_at", precision: 6, null: false
@@ -47,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_005542) do
     t.index ["user_id", "dish_id"], name: "index_favorites_on_user_id_and_dish_id", unique: true
   end
 
-  create_table "ingredients", force: :cascade do |t|
+  create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.integer "dish_id"
     t.string "quantity"
@@ -56,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_005542) do
     t.index ["dish_id"], name: "index_ingredients_on_dish_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
@@ -66,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_005542) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
