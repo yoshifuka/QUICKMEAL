@@ -25,30 +25,32 @@
       <div class="col-md-9">
         <div class = 'form-group'>
           <%= i.label :name %>　<span class="input-need">※必須</span>
-          <%= i.text_field :name, class: 'form-control ingredient_name' %>
+          <% 10.times do %>
+            <%= i.text_field :name, class: 'form-control ingredient_name' %>
+          <% end %>
         </div>
       </div>
       <div class="col-md-3">
         <div class = 'form-group'>
           <%= i.label :quantity %>　<span class="input-unneed">※任意</span>
-          <%= i.text_field :quantity, class: 'form-control ingredient_quantity' %>
+          <% 10.times do %>
+            <%= i.text_field :quantity, class: 'form-control ingredient_quantity' %>
+          <% end %>
         </div>
       </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= render partial: "ingredient_form", collection: (1..9) , locals: {f: f} %>
-  </div>
-
   <div class = 'field'>
     <%= f.label :tips %>　<span class="input-unneed">※任意</span>
     <%= f.text_field :tips, class: 'form-control', id: 'dish_tips' %>
   </div>
+
   <div class = 'field'>
     <%= f.label :required_time %> [分]　<span class="input-need">※必須</span>
     <%= f.text_field :required_time, class: 'form-control', id: 'dish_required_time' %>
   </div>
+
   <div class="field actions">
     <%= f.submit nil, class: 'btn btn-primary' %>
   </div>
