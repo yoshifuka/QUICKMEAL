@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div id="page">
+    <div class="background" id="page">
       <%= render 'partial/header' %>
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>

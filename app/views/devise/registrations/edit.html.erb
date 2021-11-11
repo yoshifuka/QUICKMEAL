@@ -6,7 +6,7 @@
         <%= render "devise/shared/error_messages", resource: @user %>
         <span class="picture">
           <%= f.label :profile_photo %>
-          <%= f.file_field :profile_photo, accept: 'image/jpeg,image/png', class: 'form-control' %>
+          <%= f.file_field :profile_photo, accept: 'image/jpeg,image/png', class: 'form-control-picture' %>
           <%= image_tag(@user.profile_photo.url, width: 200, height: 200) if @user.profile_photo.url.present? %>
         </span>
 
