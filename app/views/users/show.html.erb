@@ -1,7 +1,7 @@
 <% provide(:title, "プロフィール") %>
 <div class="main">
   <div class="container">
-    <div class="row">
+    <div class="row user-box">
       <div class="col-md-6">
         <div class="user-picture-box">
           <%= link_to((image_tag @user.profile_photo.url), user_path(@user.id), class: 'user-picture-show') if @user.profile_photo.url.present? %>
