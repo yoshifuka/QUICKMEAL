@@ -1,5 +1,6 @@
 <% provide(:title, "#{@dish.name}") %>
 <% @comments  = @dish.feed_comment(@dish.id) %>
+<% @records  = @dish.feed_record(@dish.id) %>
 <div class="main">
   <div class="form-wrap">
     <div class="text-center">
@@ -13,14 +14,13 @@
       <p class="cook-user">cooked by <%= link_to @dish.user.username, user_path(@dish.user), class:"link" %></p>
       <div class="change-dish">
         <% if current_user == @dish.user %>
-          <%= link_to "編集", edit_dish_path(@dish), class: 'edit-dish' %>　
-          <%= link_to "削除", dish_path(@dish), method: :delete, class: 'delete-dish',
-                                        data: { confirm: "本当に削除しますか？" } %>
+          <%= link_to "編集", edit_dish_path(@dish), class: 'edit-dish link' %>　
+          <%= link_to "削除", dish_path(@dish), method: :delete, class: 'delete-dish link',　data: { confirm: "本当に削除しますか？" } %>
         <% end %>
       </div>
-      <h4><%= @dish.description %></h4>
+      <h4 class="description"><%= @dish.description %></h4>
       <div class="ingredients">
-        <h5 class="title-ingredients">材料</h5>
+        <h5 class="title-ingredients">材料：</h5>
         <table class="ingredient">
           <% @dish.ingredients.each do |ingredient| %>
             <% if ingredient.name.present? %>
@@ -32,16 +32,26 @@
           <% end %>
         </table>
       </div>
+      <div class="way_of_cooking">
+        <h5 class="title-way_of_cooking">作り方：</h5><h5><%= @dish.way_of_cooking %></h5>
+      </div>
       <div class="tips">
-        <h5 class="title-tips">コツ・ポイント</h5><h5><%= @dish.tips %></h5>
+        <h5 class="title-tips">コツ・ポイント：</h5><h5><%= @dish.tips %></h5>
       </div>
       <div class="dish-info">
-        <h5 class="dish-portion">分量：</h5><h4><%= @dish.portion %></h4>人分</h5>
+        <h5 class="dish-portion">分量：</h5><h5><%= @dish.portion %>人分</h5>
       </div>
       <div class="show-dish-other-info">
         <div class="dish-info">
-          <h5>調理時間：</h5><h4><%= @dish.required_time %></h4> <h5>分</h5>
+          <h5>調理時間：</h5><h5><%= @dish.required_time %>分</h5>
         </div>
+      </div>
+      <% if current_user == @dish.user %>
+        <div class="record">
+          <%= render "records/feed_records" %>
+          <%= render "records/new" %>
+        </div>
+      <% end %>
       <div class="comment">
         <%= render "comments/feed_comments" %>
         <%= render "comments/new" %>

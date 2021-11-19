@@ -7,9 +7,9 @@
   </div>
   <span class="name"><%= link_to dish.name, dish_path(dish), class:"link" %></span>
   <%= render 'users/favorite_form' %>
-  <span class="description"><%= dish.description %></span><br>
+  <span><%= dish.description %></span><br>
   <div class="dish-ingredient">
-    <p class="title-ingredient-mini">【材料】</p>
+    <p class="title-ingredient">【材料】</p>
     <% dish.ingredients.each_with_index do |ing, i| %>
       <% if ing.name.present? %>
         <%= "｜" unless i == 0 %><%= ing.name %>: <%= ing.quantity %>
@@ -17,13 +17,13 @@
     <% end %>
   </div>
   <div class="dish-other-info">
-    <span class="required_time">所要時間：<%= dish.required_time %>分　</span>
+    <span class="required_time">調理時間：<%= dish.required_time %>分　</span>
     <span class="timestamp">
       <%= time_ago_in_words(dish.created_at) %>前に投稿
     </span>
     <% if current_user == dish.user %>
-      <%= link_to "削除", dish_path(dish), method: :delete, class:"link",
-                        data: { confirm: "本当に削除しますか？" } %>
+      <%= render "records/new_form" %>
+      <%= link_to "削除", dish_path(dish), method: :delete, class:"link", data: { confirm: "本当に削除しますか？" } %>
     <% end %>
   </div>
 </li>

@@ -49,12 +49,17 @@
         <% end %>
 
         <div class = 'field'>
+          <%= f.label :way_of_cooking %> <span class="input-unneed">※任意</span>
+          <%= f.text_area :way_of_cooking, class: 'form-control', id: 'dish_way_of_cooking' %>
+        </div>
+
+        <div class = 'field'>
           <%= f.label :tips %>　<span class="input-unneed">※任意</span>
           <%= f.text_field :tips, class: 'form-control', id: 'dish_tips' %>
         </div>
 
         <div class = 'field'>
-          <%= f.label :required_time %> [分]　<span class="input-need">※必須</span>
+          <%= f.label :required_time %>[分] <span class="input-need">※必須</span>
           <%= f.text_field :required_time, class: 'form-control', id: 'dish_required_time' %>
         </div>
 

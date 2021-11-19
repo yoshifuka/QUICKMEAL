@@ -1,0 +1,15 @@
+<%= form_with model: @record, local: true do |f| %>
+  <%= hidden_field_tag :dish_id, @dish.id %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="field">
+        <%= f.text_area :content, placeholder: "クックレコードを追加..." %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field">
+        <%= f.submit "レコード", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

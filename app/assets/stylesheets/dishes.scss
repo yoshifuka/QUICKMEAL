@@ -12,6 +12,10 @@
   font-size: 13px;
 }
 
+.ingredient-form {
+  padding-left: 15px;
+}
+
 // 料理個別ページ
 .dish-user-name {
   display: inline-block;
@@ -25,22 +29,30 @@ h2.dish-name {
 }
 
 .dish-portion {
-  margin-top: 30px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.tips {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.tips, .way_of_cooking {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
   h5 {
-    font-size: 17px;
+    font-size: 16px;
+    display: inline-block;
+    font-weight: bold;
   }
 }
 
 .title-tips {
   font-size: 20px;
-  font-weight: bold;
   margin-top: 20px;
-  margin-bottom: 10;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-weight: bold;
+  width: 100%
 }
 
 .show-dish-other-info {
@@ -56,6 +68,7 @@ h2.dish-name {
 .dish-info {
   h5 {
     font-size: 16px;
+    font-weight: bold;
     display: inline-block;
   }
   h4 {
@@ -66,6 +79,7 @@ h2.dish-name {
 
 .change-dish {
   display: inline-block;
+  padding-bottom: 10px;
 }
 
 .title-comment {
@@ -78,7 +92,7 @@ h2.dish-name {
   list-style: none;
   li {
     font-size: 14px;
-    padding: 20px 0;
+    padding: 10px 0;
     border-top: 1px solid #e8e8e8 ;
     .comment {
       font-size: 16px;
@@ -90,8 +104,29 @@ h2.dish-name {
   color: grey;
 }
 
-.comment_form {
+.comment_form, .record_form {
   padding-left: 40px;
+}
+
+.title-cookrecord {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.dish-created-at {
+  color: grey;
+}
+
+.records {
+  list-style: none;
+  li {
+    font-size: 16px;
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8 ;
+    .delete {
+      font-size: 14px;
+    }
+  }
 }
 
 // 料理(Dish)
@@ -118,20 +153,20 @@ span.picture {
   margin-top: 30px;
   margin-bottom: 30px;
   h5 {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
 .title-ingredients {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 table.ingredient {
-  width: 100%;
-  border-spacing: 0;
+  width: 90%;
+  margin-left: 40px;
 }
 
 table.ingredient th, table.ingredient td {
@@ -154,6 +189,7 @@ table.ingredient tr:nth-child(odd) {
 
 .dish-name {
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .dish-picture img {

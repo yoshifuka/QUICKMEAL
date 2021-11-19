@@ -11,9 +11,14 @@ class Dish < ApplicationRecord
   validate :picture_size
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :records, dependent: :destroy
 
   def feed_comment(dish_id)
     Comment.where("dish_id = ?", dish_id)
+  end
+
+  def feed_record(dish_id)
+    Record.where("dish_id = ?", dish_id)
   end
 
   private
