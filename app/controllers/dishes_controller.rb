@@ -11,7 +11,7 @@ class DishesController < ApplicationController
 
   def new
     @dish = Dish.new
-    @dish.ingredients.build
+    10.times { @dish.ingredients.build }
   end
 
   def create
