@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @dishes = @user.dishes.paginate(page: params[:page], per_page: 5)
+    @record = Record.new
   end
 
   def following

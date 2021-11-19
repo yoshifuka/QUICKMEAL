@@ -14,6 +14,7 @@ ja:
         required_time: 所要時間
         user_id: 作成者のID
         picture: 料理の写真
+        way_of_cooking: 作り方
       ingredient:
         dish_id: 紐づいた料理のID
         name: 材料 [10種類まで登録可]
@@ -22,6 +23,9 @@ ja:
         user_id: コメント投稿者のID
         dish_id: コメントされた料理のID
         content: コメント
+      record:
+        dish_id: レコードをつける料理のID
+        content: レコード
   will_paginate:
     previous_label: 前_
     next_label: _次

@@ -1,5 +1,4 @@
 class DishesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   def index
@@ -7,6 +6,7 @@ class DishesController < ApplicationController
 
   def show
     @comment = Comment.new
+    @record = Record.new
   end
 
   def new
@@ -48,6 +48,7 @@ class DishesController < ApplicationController
 
     def dish_params
       params.require(:dish).permit(:name, :description, :portion, :tips,
+                                   :way_of_cooking,
                                    :picture, :required_time,
                                    ingredients_attributes:
                                    [:id, :name, :quantity]).merge(user_id: current_user.id)
@@ -59,6 +60,6 @@ class DishesController < ApplicationController
 
     def correct_user
       @dish = current_user.dishes.find_by(id: params[:id])
-      redirect_to root_url if @dish.nil?
+      redirect_to root_path if @dish.nil?
     end
 end

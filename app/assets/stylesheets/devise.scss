@@ -21,7 +21,7 @@ body {
 }
 
 .form-wrap{
-  max-width: 450px;
+  max-width: 430px;
   width: 100%;
   margin: 50px auto;
 }
@@ -88,6 +88,7 @@ footer {
 
 .link {
   text-decoration: none!important;
+  color: #808080
 }
 
 #pageTop {
@@ -112,4 +113,9 @@ footer {
   font-weight: bold;
   text-decoration: none;
   text-align: center;
+}
+
+.alert {
+  color: #155724;
+  background-color: #d4edda;
 }
