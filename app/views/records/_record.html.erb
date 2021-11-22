@@ -1,12 +1,14 @@
 <li id="record-<%= record.id %>">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-6">
       <span class="cook_times"><%= @records.count - record_counter %>回目</span>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
       <span class="created_at"><%= record.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]})") %></span>
     </div>
-    <div class="col-md-7">
+  </div>
+  <div>
+    <div class="col-md-12">
       <span class="content"><%= record.content %></span>
     </div>
   </div>
