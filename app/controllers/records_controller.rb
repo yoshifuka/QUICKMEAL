@@ -8,6 +8,7 @@ class RecordsController < ApplicationController
     else
       flash[:danger] = "クックレコードを投稿できませんでした。"
     end
+    List.find(params[:list_id]).destroy unless params[:list_id].nil?
     redirect_to dish_path(@dish)
   end
 
@@ -20,10 +21,4 @@ class RecordsController < ApplicationController
     end
     redirect_to dish_path(@dish)
   end
-
-  private
-    def correct_user
-      dish = current_user.dishes.find_by(id: params[:dish_id])
-      redirect_to root_path if dish.nil?
-    end
 end

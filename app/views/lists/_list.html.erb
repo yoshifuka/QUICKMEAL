@@ -1,0 +1,18 @@
+<% @list = list %>
+<% @dish = Dish.find(list.dish_id) %>
+<li id="list-<%= @dish.id %>">
+  <div class="list-dish">
+    <p class="list-time"><%= list.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]})") %> </p>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= link_to((image_tag @dish.picture.url), dish_path(@dish), class: "dish-picture") %>
+    </div>
+    <div class="col-md-6">
+      <p><%= link_to @dish.name, dish_path(@dish), class: "unlist link" %></p>
+      <p class="list-dish-description"><%= @dish.description %></p>
+      <%= link_to "リストから削除", "/lists/#{list.id}/destroy", method: :delete, class: "unlist link", data: { confirm: "リストから削除しますか？" } %>
+    </div>
+  </div>
+  <%= render "records/new_form" %>
+</li>

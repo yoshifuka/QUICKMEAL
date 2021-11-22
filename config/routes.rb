@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   delete 'favorites/:dish_id/destroy' => 'favorites#destroy', as: 'destroy_favorites'
   resources :relationships, only: [:create, :destroy]
   resources :records, only: [:create, :destroy]
+  get :lists, to: 'lists#index'
+  post "lists/:dish_id/create" => "lists#create"
+  delete "lists/:list_id/destroy" => "lists#destroy"
 end
