@@ -15,14 +15,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  protected
+  def correct_user
+    dish = current_user.dishes.find_by(id: params[:dish_id])
+    redirect_to root_path if dish.nil?
+  end
 
+  protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     end
 
     def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update,
-                                        keys: [:username, :introduction, :profile_photo])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:username, :introduction, :profile_photo])
     end
 end

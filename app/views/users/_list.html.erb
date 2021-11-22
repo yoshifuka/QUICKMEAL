@@ -1,0 +1,5 @@
+<%= link_to "/lists/#{@dish.id}/create", method: :post, class: 'list', remote: true do %>
+  <% if current_user == @dish.user %>
+    <div class="list-btn-list"><i class="fas fa-list-alt"></i> 作るリストに追加する</div>
+  <% end %>
+<% end %>

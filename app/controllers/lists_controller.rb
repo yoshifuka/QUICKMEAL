@@ -1,11 +1,13 @@
-class FavoritesController < ApplicationController
+class ListsController < ApplicationController
   def index
-    @favorites = current_user.favorites.paginate(page: params[:page], per_page: 5)
+    @lists = current_user.lists.paginate(page: params[:page], per_page: 5)
+    @record = Record.new
   end
 
   def create
     @dish = Dish.find(params[:dish_id])
-    current_user.favorite(@dish)
+    @user = @dish.user
+    current_user.list(@dish)
     respond_to do |format|
       format.html { redirect_to request.referrer || root_url }
       format.js
@@ -13,8 +15,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @dish = Dish.find(params[:dish_id])
-    current_user.favorites.find_by(dish_id: @dish.id).destroy
+    list = List.find(params[:list_id])
+    @dish = list.dish
+    list.destroy
     respond_to do |format|
       format.html { redirect_to request.referrer || root_url }
       format.js

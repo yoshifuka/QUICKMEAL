@@ -1,0 +1,15 @@
+<% provide(:title, "作るリスト") %>
+<div class="main">
+  <div class="form-wrap">
+    <div class="field text-center">
+      <div>
+      <h3>　作るリスト (<%= @lists.count %>)</h3>
+    </div>
+  </div>
+  <% if @lists.present? %>
+    <ol class="lists">
+      <%= render @lists %>
+    </ol>
+  <% end %>
+  <%= will_paginate @lists %>
+</div>

@@ -18,6 +18,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   mount_uploader :profile_photo, PictureUploader
+  has_many :lists, dependent: :destroy
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
@@ -61,5 +62,17 @@ class User < ApplicationRecord
 
   def followed_by?(other_user)
     followers.include?(other_user)
+  end
+
+  def list(dish)
+    List.create!(user_id: dish.user_id, dish_id: dish.id)
+  end
+
+  def unlist(list)
+    list.destroy
+  end
+
+  def list?(dish)
+    !List.find_by(dish_id: dish.id).nil?
   end
 end

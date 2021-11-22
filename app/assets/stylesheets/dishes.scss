@@ -93,7 +93,7 @@ h2.dish-name {
   li {
     font-size: 14px;
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8 ;
+    border-top: 1px solid #999 ;
     .comment {
       font-size: 16px;
     }
@@ -122,7 +122,7 @@ h2.dish-name {
   li {
     font-size: 16px;
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8 ;
+    border-top: 1px solid #999 ;
     .delete {
       font-size: 14px;
     }
@@ -135,7 +135,7 @@ h2.dish-name {
   padding: 10px;
   li {
     padding: 20px 0;
-    border-top: 2px solid #e8e8e8 ;
+    border-top: 2px solid #999 ;
   }
   .timestamp {
     margin-left: 60px;
@@ -195,9 +195,11 @@ table.ingredient tr:nth-child(odd) {
 .dish-picture img {
   max-width: 150px;
   height: 150px;
+  margin-bottom: 15px;
 }
 
 .dish-picture-show img {
   max-width: 200px;
   height: 200px;
+  margin-bottom: 15px;
 }

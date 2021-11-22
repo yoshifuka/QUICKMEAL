@@ -57,9 +57,4 @@ class DishesController < ApplicationController
     def set_dish
       @dish = Dish.find(params[:id])
     end
-
-    def correct_user
-      @dish = current_user.dishes.find_by(id: params[:id])
-      redirect_to root_path if @dish.nil?
-    end
 end

@@ -12,6 +12,7 @@ class Dish < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :records, dependent: :destroy
+  has_many :lists, dependent: :destroy
 
   def feed_comment(dish_id)
     Comment.where("dish_id = ?", dish_id)
