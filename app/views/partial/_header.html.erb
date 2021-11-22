@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li><%= render 'layouts/search'%></li>
           <li><%= link_to '料理投稿', new_dish_path, class: "btn btn-warning btn-record dish-registration" %></li>
@@ -21,8 +21,8 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to '新規登録', new_user_registration_path, class:"link" %></li>
-          <li><%= link_to 'ログイン', new_user_session_path, class:"link" %></li>
+          <li class="ml-auto"><%= link_to '新規登録', new_user_registration_path, class:"link" %></li>
+          <li class="ml-auto"><%= link_to 'ログイン', new_user_session_path, class:"link  new-registration" %></li>
         <% end %>
       </ul>
     </div>
