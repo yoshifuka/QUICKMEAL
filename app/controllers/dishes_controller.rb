@@ -28,7 +28,7 @@ class DishesController < ApplicationController
   end
 
   def update
-    if @dish.update_attributes(dish_params)
+    if @dish.update(dish_params)
       flash[:success] = "料理情報が更新されました！"
       redirect_to dish_path(@dish)
     else
@@ -56,5 +56,10 @@ class DishesController < ApplicationController
 
     def set_dish
       @dish = Dish.find(params[:id])
+    end
+
+    def correct_user
+      @dish = current_user.dishes.find_by(id: params[:id])
+      redirect_to root_path if @dish.nil?
     end
 end

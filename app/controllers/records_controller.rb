@@ -21,4 +21,11 @@ class RecordsController < ApplicationController
     end
     redirect_to dish_path(@dish)
   end
+
+  private
+
+    def correct_user
+      dish = current_user.dishes.find_by(id: params[:dish_id])
+      redirect_to root_path if dish.nil?
+    end
 end
