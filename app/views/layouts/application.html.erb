@@ -18,6 +18,11 @@
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
+      <% if user_signed_in? %>
+        <div class="sp form-wrap">
+          <%= render 'layouts/search'%>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
     <div id="pageTop"><a href="#" ><i class="fa fa-chevron-up"></i></a>

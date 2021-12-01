@@ -1,7 +1,7 @@
 <%= search_form_for @q do |f| %>
   <ul class="navbar-nav search">
     <li><%= f.search_field :name_or_ingredients_name_cont, placeholder: "料理名、材料名で検索", class: 'form-control' %></li>
-    <li><%= f.number_field :required_time_gteq, class:"form-control", placeholder: "以上(分)" %></li>~<li><%= f.number_field :required_time_lteq, class:"form-control", placeholder: "以下(分)" %></li>
+    <li><%= f.number_field :required_time_gteq, class:"form-control", placeholder: "以上(分)" %></li><span class="nami text-center">~</span><li><%= f.number_field :required_time_lteq, class:"form-control", placeholder: "以下(分)" %></li>
     <li><%= f.submit nil, class: 'btn btn-warning btn-record' %></li>
   </ul>
 <% end %>

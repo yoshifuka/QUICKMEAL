@@ -2,7 +2,7 @@
   <%= render 'devise/shared/error_messages', resource: @dish %>
   <span class="picture">
     <%= f.label :picture %>　<span class="input-unneed">※任意</span>
-    <%= f.file_field :picture, accept: 'image/jpeg,image/png', class: 'form-control', id: 'dish_picture' %>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/png', id: 'dish_picture' %>
   </span>
 
   <div class='field'>
