@@ -8,13 +8,13 @@ RSpec.describe "Pages", type: :system do
       end
 
       it "クイックミールの文字列が存在することを確認" do
-        expect(page).to have_content 'クイックミール'
+        expect(page).to have_content 'クッキングレコード'
       end
 
       it "正しいタイトルが表示されることを確認" do
         expect(page).to have_title full_title
       end
     end
-    
+
   end
 end
