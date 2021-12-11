@@ -4,9 +4,9 @@ class RecordsController < ApplicationController
     @dish = Dish.find(params[:dish_id])
     @record = @dish.records.build(content: params[:record][:content])
     if !@dish.nil? && @record.save
-      flash[:success] = "クックレコードを追加しました！"
+      flash[:success] = "クッキングレコードを追加しました！"
     else
-      flash[:danger] = "クックレコードを投稿できませんでした。"
+      flash[:danger] = "クッキングレコードを投稿できませんでした。"
     end
     List.find(params[:list_id]).destroy unless params[:list_id].nil?
     redirect_to dish_path(@dish)
@@ -17,7 +17,7 @@ class RecordsController < ApplicationController
     @dish = @record.dish
     if current_user == @dish.user
       @record.destroy
-      flash[:success] = "クックレコードを削除しました"
+      flash[:success] = "クッキングレコードを削除しました"
     end
     redirect_to dish_path(@dish)
   end

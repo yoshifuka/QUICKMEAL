@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col-md-8">
       <div class="field">
-        <%= f.text_area :content, placeholder: "クックレコードを追加..." %>
+        <%= f.text_area :content, placeholder: "クッキングレコードを追加..." %>
       </div>
     </div>
     <div class="col-md-4">
       <div class="field">
         <% if @list.present? %>
-        <%= f.submit "レコード", class: "btn btn-primary",　data: { confirm: "リストから削除しクックレコードを追加しますか？" } %>
+        <%= f.submit "レコード", class: "btn btn-primary", data: { confirm: "リストから削除しクッキングレコードを追加しますか？" } %>
       <% else %>
         <%= f.submit "レコード", class: "btn btn-primary" %>
       <% end %>
