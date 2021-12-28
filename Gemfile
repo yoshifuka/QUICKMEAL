@@ -27,8 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'will_paginate', '3.1.7'
-gem 'will_paginate-bootstrap4'
+gem 'kaminari'
 gem 'ransack'
 
 group :production, :staging do

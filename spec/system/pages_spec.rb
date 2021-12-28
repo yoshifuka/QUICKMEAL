@@ -15,6 +15,5 @@ RSpec.describe "Pages", type: :system do
         expect(page).to have_title full_title
       end
     end
-
   end
 end
