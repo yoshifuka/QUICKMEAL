@@ -30,7 +30,6 @@ RSpec.describe "Users", type: :system do
     end
   end
 
-
   describe "ログインページ" do
     before do
       visit new_user_session_path
