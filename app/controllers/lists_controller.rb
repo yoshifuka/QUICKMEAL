@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = current_user.lists.paginate(page: params[:page], per_page: 5)
+    @lists = current_user.lists.page(params[:page]).per(5)
     @record = Record.new
   end
 
